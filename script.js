@@ -26,7 +26,6 @@ const calculateBudget = e => {
   // calculate daily budget
   const budget = () => ((totalNum - expensesNum) / totalDays).toFixed(2);
 
-  // display daily budget in the dom
   return (budgetField.innerHTML = `<p>Your daily budget is: ${budget()}${currency}</p>`);
 };
 

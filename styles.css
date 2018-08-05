@@ -1,10 +1,38 @@
+* {
+  font-family: 'Montserrat', sans-serif;
+  color: #222;
+}
 body {
   width: 100vw;
   height: 100vh;
+  background: #fdfdfd;
+}
+
+h3 {
+  text-align: center;
+  margin: 1em 0;
 }
 
 label {
-  margin: 1em 0;
+  margin: 1em 0 1.5em 0;
+}
+
+button {
+  padding: 1em;
+  width: 50%;
+  margin: 1em auto;
+  background: transparent;
+  font-weight: 600;
+  border: 2px solid #222;
+  border-radius: 15px;
+}
+
+input,
+select {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #222;
+  outline: none;
 }
 
 .budgetForm {
@@ -12,4 +40,9 @@ label {
   flex-direction: column;
   margin: auto;
   max-width: 50vw;
+}
+
+.budget {
+  margin: 2em auto;
+  width: 50vw;
 }
