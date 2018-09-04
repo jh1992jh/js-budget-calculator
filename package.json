@@ -1,0 +1,22 @@
+{
+  "name": "js-budget-calculator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "start": "http-server -c-1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jh1992jh/js-budget-calculator.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jh1992jh/js-budget-calculator/issues"
+  },
+  "homepage": "https://github.com/jh1992jh/js-budget-calculator#readme",
+  "dependencies": {
+    "http-server": "^0.11.1"
+  }
+}
