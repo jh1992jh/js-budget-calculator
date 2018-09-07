@@ -3,7 +3,7 @@
   color: #222;
 }
 body {
-  width: 100vw;
+  max-width: 100%;
   height: 100vh;
   background: #fdfdfd;
 }
@@ -45,4 +45,43 @@ select {
 .budget {
   margin: 2em auto;
   width: 50vw;
+}
+
+/* BUDGET.HTML STYLES */
+
+#showBudgetBody {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#showBudgetBody header {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+
+#showBudgetBody #showBudget {
+  min-height: 50%;
+  min-width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#showBudgetBody #showBudget .budgetItem {
+  margin: 0.5em 0;
+}
+
+#showBudgetBody #showBudget p {
+  text-align: center;
+  margin: 0;
+}
+
+#showBudgetBody #showBudget h4 {
+  margin: 0.5em 0;
 }

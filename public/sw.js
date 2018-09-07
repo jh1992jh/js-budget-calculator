@@ -1,5 +1,5 @@
-var CACHE_STATIC = 'static-v1';
-var CACHE_DYNAMIC = 'dynamic-v1';
+var CACHE_STATIC = 'static-v2';
+var CACHE_DYNAMIC = 'dynamic-v2';
 
 self.addEventListener('install', event => {
     console.log('Installing Service Worker ', event);
@@ -36,24 +36,39 @@ self.addEventListener('activate', event => {
     return self.clients.claim();
 })
 
-self.addEventListener('fetch', event => {
-    event.respondWith(
-        caches.match(event.request)
-            .then(response => {
-                if(response) {
-                    return response
-                } else {
-                    return fetch(event.request)
-                        .then(res => {
-                            caches.open(CACHE_DYNAMIC)
-                                .then(cache => {
-                                    cache.put(event.request.url, res.clone())
-                                    return res;
-                                })
-                                
-                        })
-                }
+ self.addEventListener('fetch', event => {
+    if(event.request.url.indexOf('/') > -1) {
+        event.respondWith(
+          caches.open(CACHE_DYNAMIC)
+            .then(function(cache) {
+              return fetch(event.request)
+                .then(function(res) {
+                  cache.put(event.request, res.clone()); 
+                  return res;
+                })
             })
-            .catch(err => console.log(err))
-    )
-})
+        );
+      } else {
+        event.respondWith(
+          caches.match(event.request)
+          .then(function(response) {
+            if(response) {
+              return response;
+            } else {
+              return fetch(event.request)
+                .then(function(res) {
+                  caches.open(CACHE_DYNAMIC)
+                    .then(function(cache) {
+                      cache.put(event.request.url,
+                        // res.clone() clones the response, done because you can only consume responses from promises once
+                        res.clone())
+                      return res;
+                    })
+                })
+                .catch(function(err) {
+                  return caches.open(CACHE_STATIC)
+                })
+            }
+          })
+        )}
+}) 

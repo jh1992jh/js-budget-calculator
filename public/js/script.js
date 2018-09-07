@@ -25,7 +25,17 @@ const calculateBudget = e => {
 
   // calculate daily budget
   const budget = () => ((totalNum - expensesNum) / totalDays).toFixed(2);
-
+  
+  // Save budget to indexedDB
+  const budgetObj = {}
+  budgetObj.id = 'budget'
+  budgetObj.dailyBudget = budget();
+  budgetObj.currency = currency;
+  budgetObj.from = fromDay;
+  budgetObj.to = toDay;
+  budgetObj.total = total;
+  budgetObj.expenses = expenses;
+  saveBudget('budgets', budgetObj)
   return (budgetField.innerHTML = `<p>Your daily budget is: ${budget()}${currency}</p>`);
 };
 
