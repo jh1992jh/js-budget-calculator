@@ -8,6 +8,19 @@ body {
   background: #fdfdfd;
 }
 
+#calcBudget {
+  transform: translateX(100vw);
+  transition: 0.5s;
+}
+
+#calcBudget header {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
 h3 {
   text-align: center;
   margin: 1em 0;
@@ -19,7 +32,7 @@ label {
 
 button {
   padding: 1em;
-  width: 50%;
+  width: 100%;
   margin: 1em auto;
   background: transparent;
   font-weight: 600;
@@ -53,6 +66,8 @@ select {
   display: flex;
   flex-direction: column;
   align-items: center;
+  transform: translateX(-100vw);
+  transition: 0.5s;
 }
 
 #showBudgetBody header {
@@ -84,4 +99,21 @@ select {
 
 #showBudgetBody #showBudget h4 {
   margin: 0.5em 0;
+}
+
+#showBudgetBody #clearBudget {
+  display: block;
+  text-align: center;
+}
+
+#showBudgetBody .noBudget {
+  width: 100%;
+  text-align: center;
+  line-height: 1.5rem;
+}
+
+#showBudgetBody .noBudget a,
+#showBudgetBody .noBudget a:link {
+  color: #0099cc;
+  text-decoration: none;
 }

@@ -1,4 +1,13 @@
+window.addEventListener('DOMContentLoaded', () => {
+  setTimeout(() => {
+    const showCalc = document.getElementById('calcBudget');
+  showCalc.style.transform = "translateX(0)";
+  console.log('animation ran')
+  },100)
+})
+
 const calculate = document.getElementById('calculate');
+
 
 const calculateBudget = e => {
   e.preventDefault();

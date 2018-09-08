@@ -1,8 +1,12 @@
 const loadBudgetInfo = () => {
-   getBudget('budgets')
+    getBudget('budgets')
     .then(budget => {
+        setTimeout(() => {
+            const showBudget = document.getElementById('showBudgetBody');
+        showBudget.style.transform = 'translateX(0)';
         const budgetField = document.getElementById('showBudget');
-        budgetField.innerHTML = `
+        if(budget !== undefined) {
+            budgetField.innerHTML = `
         <div class="budgetItem">
         <p>${budget.from}</p>
         <h4>From</h4>
@@ -22,8 +26,17 @@ const loadBudgetInfo = () => {
         <div class="budgetItem">
         <p>${budget.dailyBudget}${budget.currency}</p>
         <h4>Daily Budget</h4>
-        </div>       
-        `
+        </div> `    
+        } else {
+            document.getElementById('clearBudget').style.display = "none"; 
+            budgetField.innerHTML = `
+                <div class="budgetItem">
+                    <h4 class="noBudget">You have no Budget yet <br> <a href="index.html">Click here</a> to create one</h4>
+                </div>
+            `
+        }     
+        
+        }, 100)
     })
    
 }

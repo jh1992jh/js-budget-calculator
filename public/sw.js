@@ -1,4 +1,4 @@
-var CACHE_STATIC = 'static-v2';
+var CACHE_STATIC = 'static-v1';
 var CACHE_DYNAMIC = 'dynamic-v2';
 
 self.addEventListener('install', event => {
