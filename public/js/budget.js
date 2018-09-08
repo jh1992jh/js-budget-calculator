@@ -29,7 +29,7 @@ const loadBudgetInfo = () => {
 }
 
 const clearBudgetClick = () => {
-    console.log(clearBudget('budgets'));
+    clearBudget('budgets');
 }
 
 window.addEventListener('DOMContentLoaded', loadBudgetInfo());
