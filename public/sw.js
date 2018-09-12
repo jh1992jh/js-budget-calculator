@@ -1,4 +1,10 @@
-var CACHE_STATIC = 'static-v1';
+importScripts('/js/idb.js');
+importScripts('/js/utilities.js');
+
+
+
+
+var CACHE_STATIC = 'static-v9';
 var CACHE_DYNAMIC = 'dynamic-v2';
 
 self.addEventListener('install', event => {
@@ -64,7 +70,6 @@ self.addEventListener('activate', event => {
                   caches.open(CACHE_DYNAMIC)
                     .then(function(cache) {
                       cache.put(event.request.url,
-                        // res.clone() clones the response, done because you can only consume responses from promises once
                         res.clone())
                       return res;
                     })
@@ -75,4 +80,19 @@ self.addEventListener('activate', event => {
             }
           })
         )}
+}) 
+
+self.addEventListener('notificationclick', (e) => {
+  const notification = e.notification;
+  const action = e.action;
+  console.log(e);
+  console.log(e.action);
+
+
+  if(action === 'disableAlerts') {
+      clearAlert('alert')
+    notification.close()
+  } else {
+    notification.close();
+  }
 }) 

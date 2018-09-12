@@ -98,12 +98,15 @@ select {
 }
 
 #showBudgetBody #showBudget h4 {
+  text-align: center;
   margin: 0.5em 0;
 }
 
+
+#showBudgetBody #alertBudget,
 #showBudgetBody #clearBudget {
-  display: block;
-  text-align: center;
+  display: none;
+  width: 80%;
 }
 
 #showBudgetBody .noBudget {
