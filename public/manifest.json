@@ -3,7 +3,7 @@
     "short_name": "JS-BC",
     "start_url": "index.html",
     "scope": ".",
-    "display": "stand alone",
+    "display": "standalone",
     "background_color": "#fdfdfd",
     "theme_color": "#fdfdfd",
     "description": "Daily budget Javascript calculator",
