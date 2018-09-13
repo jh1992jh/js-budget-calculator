@@ -3,7 +3,7 @@ const loadBudgetInfo = () => {
     .then(budget => {
         setTimeout(() => {
             const showBudget = document.getElementById('showBudgetBody');
-        showBudget.style.transform = 'translateX(0)';
+        showBudget.style.transform = 'translateY(0)';
         const budgetField = document.getElementById('showBudget');
         if(budget !== undefined) {
             const displayDate = (str) => {
@@ -51,6 +51,7 @@ const loadBudgetInfo = () => {
 
 const clearBudgetClick = () => {
     clearBudget('budgets');
+    window.location.href = "index.html"
 }
 
 function displayConfirmNotification() {
@@ -78,22 +79,7 @@ function displayConfirmNotification() {
                 })
 
         })
-        .then(() => {
-            if(deferredPrompt) {
-                deferredPrompt.prompt();
-
-                deferredPrompt.userChoice
-                    .then(choiceResult => {
-
-                        if(choiceResult.outcome === 'dismissed') {
-                            console.log('User cancelled instalation');
-                        } else {
-                            console.log('User added to homescreen')
-                        }
-                    })
-            }
-        })
-        
+        .catch(err => console.log(err))
   }
   
 

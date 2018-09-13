@@ -15,14 +15,14 @@ self.addEventListener('install', event => {
             .then(cache => {
                 cache.addAll([
                     '/',
-                    '/index.html',
-                    '/budget.html',
-                    '/js/idb.js',
-                    '/js/utilities.js', 
-                    '/js/registerSw.js',
-                    '/js/script.js',
-                    '/js/budget.js',
-                    '/css/styles.css',
+                    'index.html',
+                    'budget.html',
+                    'js/idb.js',
+                    'js/utilities.js', 
+                    'js/registerSw.js',
+                    'js/script.js',
+                    'js/budget.js',
+                    'css/styles.css',
                     'https://fonts.googleapis.com/css?family=Montserrat'
                 ])
             })

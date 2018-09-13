@@ -48,7 +48,10 @@ const dailyBudgetNotification = () => {
       .then(budget => {
           var options = {
               body: `Your daily budget is ${budget.dailyBudget}${budget.currency}`,
-              icon: '../images/icon-96x96.png',
+              icon: 'images/icon-96x96.png',
+              tag : 'dailyBudget',
+              renotify: true,
+              vibrate: [100,50,200],
               actions: [
                   { action: 'disableAlerts', title: 'Disable budget alerts'},
                   
@@ -70,7 +73,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
   setTimeout(() => {
     const showCalc = document.getElementById('calcBudget');
-  showCalc.style.transform = "translateX(0)";
+  showCalc.style.transform = "translateY(0)";
   
   getAlert('alert')
     .then(alert => {
