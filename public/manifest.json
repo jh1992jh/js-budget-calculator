@@ -1,9 +1,9 @@
 {
     "name": "JS-Budget-Calculator",
     "short_name": "JS-BC",
-    "start_url": "public/index.html",
+    "start_url": "index.html",
     "scope": ".",
-    "display": "browser",
+    "display": "stand alone",
     "background_color": "#fdfdfd",
     "theme_color": "#fdfdfd",
     "description": "Daily budget Javascript calculator",
