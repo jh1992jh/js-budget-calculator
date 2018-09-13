@@ -1,5 +1,5 @@
-importScripts('/js/idb.js');
-importScripts('/js/utilities.js');
+importScripts('js/idb.js');
+importScripts('js/utilities.js');
 
 
 
