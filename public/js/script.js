@@ -67,11 +67,10 @@ window.addEventListener('DOMContentLoaded', () => {
   const expenses = document.getElementById('expenses');
   const from = document.getElementById('from');
   const to = document.getElementById('to');
-  console.log(currency)
+
   setTimeout(() => {
     const showCalc = document.getElementById('calcBudget');
   showCalc.style.transform = "translateX(0)";
-  console.log('animation ran')
   
   getAlert('alert')
     .then(alert => {

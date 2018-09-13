@@ -18,5 +18,8 @@
   "homepage": "https://github.com/jh1992jh/js-budget-calculator#readme",
   "dependencies": {
     "http-server": "^0.11.1"
+  },
+  "devDependencies": {
+    "gh-pages": "^1.2.0"
   }
 }

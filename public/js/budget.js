@@ -8,7 +8,6 @@ const loadBudgetInfo = () => {
         if(budget !== undefined) {
             const displayDate = (str) => {
                const dateArr = str.split('-')
-                console.log(dateArr);
                 return dateArr.reverse().join('.');
             }
             budgetField.innerHTML = `
@@ -61,8 +60,7 @@ function displayConfirmNotification() {
             var options = {
                 body: `You succesfully setup a budget alert!`,
                 icon: '../images/icon-96x96.png',
-              }
-             // new Notification('Daily Budget', options) 
+              } 
           
             navigator.serviceWorker.ready
                 .then(function(swreg) {
@@ -86,7 +84,6 @@ function displayConfirmNotification() {
 
                 deferredPrompt.userChoice
                     .then(choiceResult => {
-                        console.log(choiceResult.outcome);
 
                         if(choiceResult.outcome === 'dismissed') {
                             console.log('User cancelled instalation');
