@@ -4,7 +4,7 @@ importScripts('/js/utilities.js');
 
 
 
-var CACHE_STATIC = 'static-v9';
+var CACHE_STATIC = 'static-v1';
 var CACHE_DYNAMIC = 'dynamic-v2';
 
 self.addEventListener('install', event => {
