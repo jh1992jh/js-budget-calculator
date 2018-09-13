@@ -1,7 +1,7 @@
 {
     "name": "JS-Budget-Calculator",
     "short_name": "JS-BC",
-    "start_url": "public/index.html",
+    "start_url": "/public/index.html",
     "scope": ".",
     "display": "standalone",
     "background_color": "#fdfdfd",
