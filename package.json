@@ -4,7 +4,8 @@
   "description": "",
   "main": "script.js",
   "scripts": {
-    "start": "http-server -c-1"
+    "start": "http-server -c-1",
+    "deploy": "gh-pages -d public"
   },
   "repository": {
     "type": "git",
